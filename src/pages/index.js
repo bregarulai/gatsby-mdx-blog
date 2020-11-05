@@ -5,9 +5,13 @@ import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO'
 const IndexPage = ({ data }) => {
+  const {
+    allMdx: { nodes: posts },
+  } = data
   return (
     <Layout>
       <Hero showPerson />
+      <Posts posts={posts} title="recently published" />
     </Layout>
   )
 }
