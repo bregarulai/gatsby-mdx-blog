@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import { FiInfo } from 'react-icons/fi'
+import { Counter, LikeButton } from '../components/Complete'
 
 <section className='mdx-page'>
 
@@ -13,7 +14,7 @@ import { FiInfo } from 'react-icons/fi'
 
 <div className="code">
 
-```js
+```jS
 const firstName = 'charles' const lastName = 'smith'
 console.log(firstName + ' ' + lastName)
 ```
@@ -34,5 +35,35 @@ console.log(firstName + ' ' + lastName)
   chicharrones. Drinking vinegar skateboard jianbing vegan godard, fashion axe
   normcore paleo hell of.
 </div>
+
+<h2>React Components</h2>
+
+<Counter />
+
+```JSX
+import React from "react"
+import styled from "styled-components"
+import { AiOutlineLike } from "react-icons/ai"
+const LikeButton = () => {
+  const [value, setValue] = React.useState(0)
+  return (
+    <Wrapper>
+      <div>
+        <button onClick={() => setValue(value + 1)}>
+          <AiOutlineLike />
+        </button>
+        <p>
+          Liked the post?
+          <br />
+          Click thumbs up few times
+        </p>
+      </div>
+      <span>+{value}</span>
+    </Wrapper>
+  )
+}
+```
+
+<LikeButton />
 
 </section>
