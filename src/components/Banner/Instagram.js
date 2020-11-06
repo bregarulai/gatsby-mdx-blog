@@ -4,7 +4,7 @@ import Image from 'gatsby-image'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
-export const query = graphql`
+const query = graphql`
   {
     allInstaNode(limit: 6) {
       nodes {
