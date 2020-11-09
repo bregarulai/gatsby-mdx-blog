@@ -9,9 +9,16 @@ const exampleCode = `
 })();
 `
 
-const Example = () => {
+const Example = props => {
+  const myClassName = props.children.props.className
+  const language = myClassName.replace(/language-/, '')
   return (
-    <Highlight {...defaultProps} code={exampleCode} language="jsx">
+    <Highlight
+      {...defaultProps}
+      code={props.children.props.children.trim()}
+      language={language}
+      theme={theme}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>
           {tokens.map((line, i) => (
